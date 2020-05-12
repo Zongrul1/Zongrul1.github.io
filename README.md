@@ -2,7 +2,7 @@
 
 Student from CAU and UniMelb.
 
-[HomePage](https://zongrul1.github.io)
+[HomePage](https://zongrul1.github.io/)
 
 ### List of project：
 
