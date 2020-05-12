@@ -1,8 +1,8 @@
-## Zongru‘s Github
+## Zongru Li
 
 Student from CAU and UniMelb.
 
-### List of project.
+### List of project：
 
 1.[Nimsys](https://github.com/Zongrul1/Nimsys)
 
