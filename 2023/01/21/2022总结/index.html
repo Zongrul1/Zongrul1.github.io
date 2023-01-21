@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今年是回到广州工作的第二年，本年度继续负责埋点平台相关的工作，工作重点从客户端转移到了服务端，在团队中的角色也从辅助开发变成了埋点管理平台和服务端埋点组件的核心开发，由于今年的开发项目都是并行的，所以以项目顺序说一下自己对今年所做项目的一些心得和想法。 Android埋点SDK开发（java + kotlin）本年度安卓埋点SDK没有较大的功能开发，主要是对之前的功能进行补充和完善，对自身并没有太">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022工作总结与思考">
+<meta property="og:url" content="http://example.com/2023/01/21/2022%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Ru">
+<meta property="og:description" content="今年是回到广州工作的第二年，本年度继续负责埋点平台相关的工作，工作重点从客户端转移到了服务端，在团队中的角色也从辅助开发变成了埋点管理平台和服务端埋点组件的核心开发，由于今年的开发项目都是并行的，所以以项目顺序说一下自己对今年所做项目的一些心得和想法。 Android埋点SDK开发（java + kotlin）本年度安卓埋点SDK没有较大的功能开发，主要是对之前的功能进行补充和完善，对自身并没有太">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-21T14:44:15.000Z">
+<meta property="article:modified_time" content="2023-01-21T12:39:23.744Z">
+<meta property="article:author" content="Ru Li">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/01/21/2022总结/"/>
+
+
+
+
+
+  <title>2022工作总结与思考 | Ru</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ru</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/2022%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ru">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2022工作总结与思考</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-01-21T22:44:15+08:00">
+                2023-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今年是回到广州工作的第二年，本年度继续负责埋点平台相关的工作，工作重点从客户端转移到了服务端，在团队中的角色也从辅助开发变成了埋点管理平台和服务端埋点组件的核心开发，由于今年的开发项目都是并行的，所以以项目顺序说一下自己对今年所做项目的一些心得和想法。</p>
+<h2><span id="android埋点sdk开发java-kotlin">Android埋点SDK开发（java + kotlin）</span></h2><p>本年度安卓埋点SDK没有较大的功能开发，主要是对之前的功能进行补充和完善，对自身并没有太多的提高，完成的功能如下：</p>
+<h3><span id="配置热切换">配置热切换</span></h3><p>本来SDK要通过分包才能切换配置，开发这个功能后，SDK可以通过接口来控制当前应用的配置，相比之前更加灵活。</p>
+<h3><span id="crc校验">CRC校验</span></h3><p>客户端与网关使用相同的CRC算法，对上报数据体进行CRC计算，对比是否一致以确定数据准确性，用来解决数据上报被截断的问题。</p>
+<h3><span id="插件模式">插件模式</span></h3><p>换而言之，利用反射去调用其他包的代码，忽略不写。</p>
+<h3><span id="数据质量">数据质量</span></h3><p>换而言之，心跳上报，忽略不写。</p>
+<h3><span id="日志全局回调">日志全局回调</span></h3><p>由于业务方提出需要一个接口去提取上报是否成功的信息而不使用原来log输出的方式，使用了观察者模式去监控数据上报情况，当上报成功时便将信息通知观察者，并让观察者的接口方法拿到信息，尔后再让业务方进行处理。</p>
+<h2><span id="埋点管理平台服务端开发java">埋点管理平台服务端开发（java）</span></h2><p>本年度一半以上的工作都在参与埋点管理平台的开发，以下提取一些值得记录的点进行叙述。</p>
+<h3><span id="埋点版本">埋点版本</span></h3><p>今年完成最大的功能是埋点管理平台的版本管理系统，以下将挑出值得思考的四点进行回顾：</p>
+<h4><span id="版本">版本</span></h4><p>首先以我看来版本这个概念主要实现了两个目的：</p>
+<ol>
+<li>将当前版本的埋点和过往版本的埋点在测试环境进行隔离</li>
+<li>将测试环境已经完成的埋点直接同步到生产环境</li>
+</ol>
+<p>但是想实现上述目的，会遭遇几个困难：</p>
+<ol>
+<li>需要提交版本才能更改过往版本的埋点，不能实时修改</li>
+<li>测试环境和生产环境的数据需要一致，不然会引发合并错误</li>
+</ol>
+<p>至于问题1：</p>
+<p>产品的建议是根据用户角色开启后门，使得高权限用户可以直接修改已发布版本的元数据，这样做虽然方便，但是会引发问题2，导致生产环境和测试环境的元数据不一致影响合并，而实际上测试同学也试过误操作影响系统的正常使用。</p>
+<p>而我这边的建议是开发一个操作审批系统，对于已发布的版本元数据的操作，必须要最高权限的角色进行审批才能进行，以保证不会出席脏数据。</p>
+<p>至于问题2：</p>
+<p>对于旧应用会造成影响，目前仍需要人工进行校准，看看在新的一年接入更多业务时，有无更好的解决方法。</p>
+<h4><span id="事件-平台与角色">事件、平台与角色</span></h4><p>在版本中的事件，会有平台和角色的概念，一个事件会属于多个平台，而一个平台又会由多个角色来负责，在这里我目前设计的是两张表去解决，一张事件平台表，一张事件平台角色表，但是在后面深入的开发中，我觉得事件平台表显得冗余，考虑用一张事件平台角色表概括直接管理这个两层模型，看看在2023能否进行重构。</p>
+<h4><span id="事件与子事件">事件与子事件</span></h4><p>在版本中的事件存在事件与子事件的概念，原因是因为产品期望在版本中可以有同名事件，而在元数据中事件名需要唯一，因此引出了子事件属性关系表，目前是通过id去区分事件和子事件间的关系，但是细想这边仍有优化的空间，暂且先作记录。</p>
+<h4><span id="版本创建同步信息">版本创建同步信息</span></h4><p>目前需求期望，新版本创建时，需要将元数据事件属性和旧版本搁置事件全部同步到新版本中，在小数据量时，这样的操作并无太大问题，但数据量大时，因为事件的插入需要同时影响事件平台表，事件角色表，事件属性表，会造成数据库处理时间过长，而前端返回客户504的情况，对用户体验造成影响。针对这个问题，和产品沟通时提出了几个方案：</p>
+<ol>
+<li>版本合并后，立刻创建新版本，等用户操作时只是假创建，避免超时。</li>
+<li>异步创建元数据</li>
+<li>简化元数据创建过程</li>
+</ol>
+<p>以上方案，将在年后进行预研实施。</p>
+<h3><span id="标签系统">标签系统</span></h3><p>目前平台中的属性均可被打上标签，被打上标签的属性可以被统一与某一事件绑定关系，目前的设计是用一张标签属性关系表去管理，这样看起来没问题，但是产品又要求，要在事件侧展示所绑定的标签，然后就引出一个问题，先要查出事件属性的关系，然后再查出属性标签的关系才能进行展示，而每次属性和标签进行解绑/绑定的时候，要去计算出所有受影响的事件进行计算，这样就会影响到效率，影响用户体验。</p>
+<p>其次标签是和属性id进行绑定，每创一次版本，版本属性就会产生新的属性id，换而言之，每一次创建版本，都要创建一次标签属性id关系，这样个人意见是会导致存储的冗余，久而久之也会造成影响。</p>
+<p>针对以上问题，我的建议是标签和应用属性的名字进行直接绑定，方便进行控制和避免产生冗余数据，同时也会减少第一个问题的计算量和缓存所需内存量。</p>
+<h3><span id="kafka消息注解化">KAFKA消息注解化</span></h3><p>针对重复的代码操作，使用注解+AOP的方式，在切面将其实现，提高了代码的可维护性，但需要注意的一个问题是，同一个方法追加多个注解时，注解的执行顺序不是固定的。</p>
+<h3><span id="请求拦截器">请求拦截器</span></h3><p>修改HandlerInterceptor类和HttpServletRequestWrapper 类，记录每一次请求的信息，方便排查问题。</p>
+<h2><span id="数据采集器组件开发与容器化java">数据采集器组件开发与容器化（java)</span></h2><p>数据采集器开发是今年的第二个重要任务，也是挑出值得提及的几点进行叙述。</p>
+<h3><span id="远程配置下发">远程配置下发</span></h3><p>之前的数据采集器配置是读取本地文件的，这样做的弊端很明显：</p>
+<ol>
+<li>部署困难</li>
+<li>管理困难</li>
+</ol>
+<p>针对以上问题，改成了从服务器中根据pod名字或者配置id进行读取，便于管理和部署。</p>
+<h3><span id="管理后台开发">管理后台开发</span></h3><p>之前数据采集器，没有监控质量、进度和配置的平台，开发以上平台解决以上问题，方便查询管理和查询异常。</p>
+<h3><span id="容器化">容器化</span></h3><p>今年响应okr号召，将数据采集器进行了容器化操作，容器化之后，资源的调度更方便，部署更加简单，自己也学会了更多k8s的知识。</p>
+<h3><span id="退出与进度保存">退出与进度保存</span></h3><p>优雅退出是今年数据采集器遇到的一个难题，容器化前的进程退出，是进程停止三十秒接收数据，然后保存进度，最终停掉进程，这种操作在非容器化前很合理，但是在容器化后却出现了问题，k8s中，一个pod被kill掉后，在旧的pod未完全结束前，新的pod是已经进行重启的，这时候就会出现一个双pod并行的情况，造成数据重复，针对这点，一开始考虑的是prestop钩子方法去解决，虽然这个方法是有执行，但是却不能保证新的pod在旧pod完全保存进度后，再启动，为了保证新pod一定要在旧pod完成进度保存后再启动，将程序延时一分钟再启动，避免重复，但是感觉这种解决方法比较粗暴，期望自己对k8s有新的理解后，有更好的解决方案。</p>
+<h2><span id="组内项目看板项目开发java">组内项目看板项目开发（java)</span></h2><p>这个是领导交予的一个组内项目，基本都是CURD的功能，唯一有一点难点的只有单点登录的接入，不过是第一次作为项目组长去做项目，在其中锻炼了自己写周报的能力。</p>
+<h2><span id="总结">总结</span></h2><ol>
+<li>今年还是做了很多crud工作，提升了自己crud和抽象设计的能力</li>
+<li>接触了k8s，开始熟悉容器</li>
+<li>还是没接触flink，2023期望可以接触</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/01/25/2021%E6%80%BB%E7%BB%93/" rel="next" title="2021工作总结与思考">
+                <i class="fa fa-chevron-left"></i> 2021工作总结与思考
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+                <a href="/archives">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Android埋点SDK开发（java + kotlin）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">配置热切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">CRC校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">插件模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">数据质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">日志全局回调</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">埋点管理平台服务端开发（java）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">埋点版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.1.1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.1.2.</span> <span class="nav-text">事件、平台与角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.1.3.</span> <span class="nav-text">事件与子事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.1.4.</span> <span class="nav-text">版本创建同步信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">标签系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">KAFKA消息注解化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.4.</span> <span class="nav-text">请求拦截器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">数据采集器组件开发与容器化（java)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">远程配置下发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">管理后台开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.3.</span> <span class="nav-text">容器化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.4.</span> <span class="nav-text">退出与进度保存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">组内项目看板项目开发（java)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ru Li</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
